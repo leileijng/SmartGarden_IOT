@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Smart Garden</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="static/css/sb-admin-2.min.css" rel="stylesheet">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  
+  
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-5 pl-3">
+		<i class="fas fa-seedling"></i>
+
+        </div>
+        <div class="sidebar-brand-text mx-3">Smart Garden<sup>1</sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Current Data</span></a>
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Addons
+      </div>
+
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span></a>
+      </li>
+
+	  <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li>
+	  
+      <!-- Nav Item - Gallery -->
+      <li class="nav-item active">
+        <a class="nav-link" href="gallery.html">
+		  <i class="far fa-image"></i>
+          <span>Gallery</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+
+	
+	
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+                    <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" id="logout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+	
+	<div class="container">
+
+    <div class="col-12">
+	<h3 id="pagetitle" class="center"></h3>
+	<button type="button" id="plantRad" class="btn btn-primary disabled">Bugs on Plant</button>
+    <button type="button" id="flowerRad" class="btn btn-primary active">Bugs on Flower</button>
+
+		<table class="table table-image table-responsive mt-3">
+		  <thead>
+		    <tr>
+		      <th scope="col">Index</th>
+		      <th scope="col">Image</th>
+		      <th scope="col">Detected By</th>
+			  <th scope="col">Detected At (Date)</th>
+		      <th scope="col">Detected At (Time)</th>
+		    </tr>
+		  </thead>
+		  <tbody id="tablebody">
+		  </tbody>
+		</table>   
+    </div>
+
+</div>
+
+		
+		
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="static/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="static/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="static/js/demo/chart-area-demo.js"></script>
+  <script src="static/js/demo/chart-pie-demo.js"></script>
+   <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+		loadPlantPic();
+		$('#plantRad').click(function() {
+        loadPlantPic();
+    });
+	$('#flowerRad').click(function() {
+        loadFlowerPic();
+    });
+	   
+            setInterval(function () {
+            }, 5000);	
+		
+        });
+	
+		function loadPlantPic(){
+		
+		$('#tablebody').html('');
+		$('#pagetitle').text('Bugs on Plant');
+		$('#plantRad').prop('disabled', true);
+	    $("#flowerRad").removeAttr('disabled');
+		$("#plantRad").removeClass("active");
+        $("#flowerRad").removeClass("disabled");
+		$("#plantRad").addClass("disabled");
+        $("#flowerRad").addClass("active");
+		
+		   $.ajax({
+    url: '/api/getImg/plant',
+	type: 'POST',
+	success: function(ndata){
+	console.log(ndata);	
+	  for (i in ndata) {
+	    console.log(ndata[i]);
+		datetime = ndata[i].datetimeid;
+        jsdatetime = new Date(Date.parse(datetime));
+        jstime = jsdatetime.toLocaleTimeString();
+		uploaddate = jsdatetime.toDateString()
+		   console.log("pic" + i + ndata[i].filename);
+		   
+		   let row = $('<tr></tr>');
+		   
+		   let indexCol = $('<td scope="row"></td>');
+		   indexCol.text("#"+(i*1+1));
+		   
+		   let imgCol = $('<td class="w-25"></td>');
+		   let imgEle = $('<img class="img-fluid img-thumbnail" alt="imgage">');
+		   imgEle.attr('id', 'img_src'+i);
+		   imgCol.append(imgEle);
+		   
+		   let detectByCol = $('<td></td>');
+		   detectByCol.attr('id', 'detectby'+i);
+		   
+		   let detectedDateCol = $('<td></td>');
+		   detectedDateCol.attr('id', 'date'+i);
+		   
+           let detectedAtCol = $('<td></td>');
+		   detectedAtCol.attr('id', 'time'+i);
+		   
+		   row.append(indexCol);
+		   row.append(imgCol);
+		   row.append(detectByCol);
+		   row.append(detectedDateCol);
+		   row.append(detectedAtCol);
+		   
+		   $('#tablebody').append(row);
+		   
+		   $("#img_src"+i).attr("src","http://s3.amazonaws.com/smartgarden-wonderwoman/plant/"+ndata[i].filename);
+		   $("#time"+i).text(jstime);
+		   $("#date"+i).text(uploaddate);
+		   $("#detectby"+i).text(ndata[i].updatedBy);
+      }
+}//end success
+    
+        });
+		}
+		
+		
+		
+		
+				function loadFlowerPic(){
+				
+						   $('#tablebody').html('');
+		$('#flowerRad').prop('disabled', true);
+	    $("#plantRad").removeAttr('disabled');
+		$('#pagetitle').text('Bugs on Flower');
+		
+		$("#flowerRad").removeClass("active");
+        $("#plantRad").removeClass("disabled");
+		$("#flowerRad").addClass("disabled");
+        $("#plantRad").addClass("active");
+		   $.ajax({
+    url: '/api/getImg/flower',
+	type: 'POST',
+	success: function(ndata){ 
+	console.log(ndata);	
+	  for (i in ndata) {
+	    console.log(ndata[i]);
+		datetime = ndata[i].datetimeid;
+        jsdatetime = new Date(Date.parse(datetime));
+        jstime = jsdatetime.toLocaleTimeString();
+		   console.log("pic" + i + ndata[i].filename);
+		   
+		   let row = $('<tr></tr>');
+		   
+		   let indexCol = $('<td scope="row"></td>');
+		   indexCol.text("#"+(i*1+1));
+		   
+		   let imgCol = $('<td class="w-25"></td>');
+		   let imgEle = $('<img class="img-fluid img-thumbnail" alt="imgage">');
+		   imgEle.attr('id', 'img_src'+i);
+		   imgCol.append(imgEle);
+		   
+		   let detectByCol = $('<td></td>');
+		   detectByCol.attr('id', 'detectby'+i);
+		   
+		   let detectedDateCol = $('<td></td>');
+		   detectedDateCol.attr('id', 'date'+i);
+		   
+           let detectedAtCol = $('<td></td>');
+		   detectedAtCol.attr('id', 'time'+i);
+		   
+		   row.append(indexCol);
+		   row.append(imgCol);
+		   row.append(detectByCol);
+		   row.append(detectedDateCol);
+		   row.append(detectedAtCol);
+		   
+		   $('#tablebody').append(row);
+		   
+		   $('#tablebody').append(row);
+		   
+		   $("#img_src"+i).attr("src","http://s3.amazonaws.com/smartgarden-wonderwoman/flower/"+ndata[i].filename);
+		   $("#time"+i).text(jstime);
+		   $("#date"+i).text(uploaddate);
+		   $("#detectby"+i).text(ndata[i].updatedBy);
+      }
+}//end success
+    
+        });
+		}
+		
+		
+		$('#logout').on('click',function () {
+   window.location.replace("logout");
+  
+});
+		
+  </script>
+
+  
+  
+  
+</body>
+
+</html>
